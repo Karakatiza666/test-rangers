@@ -1,5 +1,4 @@
 import { Container, Point } from 'pixi.js';
-// import { AnimationStore } from '../stores/Store';
 
 import Logo from '../displayobjects/misc/Logo';
 import Background from '../displayobjects/environment/Background';
@@ -70,7 +69,6 @@ export default class Example extends Container {
   }
 
   mousemove(e: any) {
-    console.log('mousemove')
     const { x, y } = e.data.global;
     if (this.mousepos.x !== x && this.mousepos.y !== y) {
       this.mousepos.set(x, y);

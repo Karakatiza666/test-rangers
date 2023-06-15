@@ -28,9 +28,18 @@ module.exports = {
         }
       },
       {
-        test: /\.jpe?g$|\.svg$|\.png$/,
+        test: /\.jpe?g$|\.svg$|\.png|\.webp|\.mp3$/,
         use: {
           loader: 'file-loader'
+        }
+      },
+      {
+        test: /\.json\?path$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          },
         }
       },
       {

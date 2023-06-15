@@ -1,7 +1,7 @@
 {
-  "name": "pixi-seed",
+  "name": "test-rangers",
   "version": "0.3.8",
-  "repository": "https://github.com/edwinwebb/pixi-seed",
+  "repository": "https://github.com/Karakatiza666/test-rangers",
   "description": "Pixi.js project seed / boiler-plate with ES6, Webpack and Redux",
   "keywords": [
     "webgl",
@@ -35,6 +35,8 @@
     "@babel/core": "^7.17.8",
     "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
     "@babel/preset-env": "^7.16.11",
+    "@pixi/assets": "^7.2.4",
+    "@pixi/sound": "^5.2.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.4",
     "eslint": "^8.12.0",
@@ -42,6 +44,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "file-loader": "^6.2.0",
     "husky": "^7.0.4",
+    "json-loader": "^0.5.7",
     "lint-staged": "^12.3.7",
     "prettier": "2.6.1",
     "raw-loader": "^4.0.2",
