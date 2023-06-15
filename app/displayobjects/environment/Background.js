@@ -1,6 +1,6 @@
 import { Sprite } from 'pixi.js';
-import SOFT from './soft.jpg';
-import ScaledContainer from '../ScaledContainer/ScaledContainer';
+import SOFT from './Background/soft.jpg';
+import ScaledContainer from '../system/ScaledContainer';
 
 /**
  * Loads the adds the diagnostic image

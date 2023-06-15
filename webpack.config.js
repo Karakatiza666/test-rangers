@@ -3,7 +3,7 @@ var DEBUG = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    index: ['./app/entry.js']
+    index: ['./app/entry.ts']
   },
   output: {
     filename: 'bundle.js',
@@ -36,8 +36,16 @@ module.exports = {
       {
         test: /\.(shader|vert|frag|geom)$/i,
         use: 'raw-loader'
-      }
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   devServer: {
     static: path.join(__dirname, 'build'),
@@ -45,5 +53,8 @@ module.exports = {
     port: 8080
   },
   mode: DEBUG ? 'development' : 'production',
-  devtool: DEBUG ? 'source-map' : false
+  devtool: DEBUG ? 'source-map' : false,
+  optimization: {
+    minimize: true
+  },
 };

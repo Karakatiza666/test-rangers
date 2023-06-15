@@ -1,7 +1,9 @@
-import { Renderer } from 'pixi.js';
-import Store, { AnimationStore } from '../stores/Store';
-import { tick } from '../stores/AnimationStore';
-import { resize } from '../stores/RendererStore';
+import { IRendererOptions, Renderer } from 'pixi.js'
+// import Store, { AnimationStore } from '../stores/Store';
+// import { tick } from '../stores/AnimationStore';
+// import { resize } from '../stores/RendererStore';
+import { useViewportSize } from '../compositions/viewportSize'
+import { useGameTick } from '../compositions/gameTick';
 
 /**
  * GL Renderer with hooks into a Store
@@ -12,7 +14,9 @@ import { resize } from '../stores/RendererStore';
  * @extends Renderer
  */
 export default class AnimatedRenderer extends Renderer {
-  constructor(options) {
+  private active = false
+
+  constructor(options: IRendererOptions) {
     super(options);
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
@@ -25,8 +29,10 @@ export default class AnimatedRenderer extends Renderer {
    * @return {null}
    */
   resizeHandler() {
-    Store.dispatch(resize());
+    useViewportSize.getState().resize()
+    const viewport = useViewportSize.getState().viewport
     this.resize(window.innerWidth, window.innerHeight);
+    // this.resize(viewport.width, viewport.height)
   }
 
   /**
@@ -53,7 +59,8 @@ export default class AnimatedRenderer extends Renderer {
   animate() {
     if (this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
-      AnimationStore.dispatch(tick());
+      // AnimationStore.dispatch(tick());
+      useGameTick.getState().next()
     }
   }
 }

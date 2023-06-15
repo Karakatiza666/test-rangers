@@ -6,8 +6,8 @@
  */
 
 import { Sprite, Texture } from 'pixi.js';
-import LOGO from './logo@2x.png';
-import ScaledContainer from '../ScaledContainer/ScaledContainer';
+import LOGO from './Logo/logo@2x.png';
+import ScaledContainer from '../system/ScaledContainer';
 
 export default class Logo extends ScaledContainer {
   constructor() {
