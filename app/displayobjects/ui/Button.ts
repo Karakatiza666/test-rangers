@@ -1,7 +1,7 @@
-import { Sprite, Texture } from "pixi.js";
+import { Sprite, Texture, Text } from "pixi.js";
 
 export class Button extends Sprite {
-   constructor(private idle: Texture, private hover?: Texture, private click?: Texture) {
+   constructor(text: string, private onClick: () => void, private idle: Texture, private hover?: Texture, private click?: Texture) {
       super(idle)
       this.anchor.set(0.5);
    
@@ -10,6 +10,7 @@ export class Button extends Sprite {
       ;(this as any).cursor = 'pointer'
       
       ;(this as any)
+         .on('click', onClick)
          // Mouse & touch events are normalized into
          // the pointer* events for handling different
          // button events.
@@ -34,6 +35,13 @@ export class Button extends Sprite {
 
          // set the mouseout callback...
          .on('mouseout', this.onButtonOut)
+      
+      const _text = new Text(text);
+      _text.anchor.set(0.5)
+      _text.scale.set(1.3, 1)
+      _text.style.fill = '#b5dde8'
+
+      this.addChild(_text);
    }
 
    onButtonDown() {

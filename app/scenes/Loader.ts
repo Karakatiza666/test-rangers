@@ -1,4 +1,4 @@
-import { Graphics, Loader } from 'pixi.js';
+import { Graphics, Assets, Ticker } from 'pixi.js';
 import { useGameTick } from '../compositions/gameTick';
 import { useViewportSize } from '../compositions/viewportSize';
 import ScaledContainer from '../displayobjects/system/ScaledContainer';
@@ -11,12 +11,11 @@ import ScaledContainer from '../displayobjects/system/ScaledContainer';
  */
 
 export default class LoaderScreen extends ScaledContainer {
-  private loader = new Loader();
   private done = () => {};
   private bar: Graphics
   private progress = 0
   private ease = 0;
-  private unsubscribe = () => {};
+  private unsubscribe: () => void;
 
   constructor() {
     // const { canvasWidth, canvasHeight } = Store.getState().Renderer;
@@ -31,23 +30,30 @@ export default class LoaderScreen extends ScaledContainer {
     this.bar.scale.x = 0;
 
     // animate it
-    this.unsubscribe = useGameTick.subscribe(s => {
-      this.ease += (this.progress - this.ease) * 0.03;
-      this.bar.scale.x = this.ease;
-    })
-
+    // this.unsubscribe = useGameTick.subscribe(s => {
+    //   this.ease += (this.progress - this.ease) * 0.03;
+    //   this.bar.scale.x = this.ease;
+    // })
+    const ontick = this.tick.bind(this)
+    Ticker.shared.add(ontick)
+    this.unsubscribe = () => Ticker.shared.remove(ontick)
     this.addChild(this.bar);
   }
 
-  start(assets = []) {
-    this.loader.add(assets);
-    this.loader.load();
-    this.loader.onProgress.add(this.onUpdate.bind(this));
-    this.loader.onComplete.add(this.onComplete.bind(this));
+  tick() {
+    console.log('loader update')
+    this.ease += (this.progress - this.ease) * 0.03;
+    this.bar.scale.x = this.ease;
   }
 
-  onUpdate(loader: Loader) {
-    this.progress = loader.progress / 100;
+  start(assets = []) {
+    Assets.load(assets, this.onUpdate.bind(this))
+      .then(this.onComplete.bind(this))
+  }
+
+  onUpdate(progress: number) {
+    console.log('onUpdate', progress)
+    this.progress = progress;
   }
 
   onComplete() {

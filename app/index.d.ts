@@ -26,3 +26,7 @@ declare module '*.json?path' {
    const value: never;
    export default value;
 }
+declare module '*.json.data' {
+   const value: never;
+   export default value;
+}

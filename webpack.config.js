@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
@@ -30,17 +30,31 @@ module.exports = {
       {
         test: /\.jpe?g$|\.svg$|\.png|\.webp|\.mp3$/,
         use: {
-          loader: 'file-loader'
-        }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]'
+          }
+        },
+        type: 'javascript/auto'
       },
+      // {
+      //   test: /\.json\?path$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[path][name].[ext]',
+      //     }
+      //   },
+      // },
       {
-        test: /\.json\?path$/,
+        test: /\.json\.data/,
         use: {
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
-          },
-        }
+            name: '[name]',
+          }
+        },
+        type: 'javascript/auto'
       },
       {
         test: /\.(shader|vert|frag|geom)$/i,

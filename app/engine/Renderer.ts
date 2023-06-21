@@ -13,10 +13,10 @@ import { useGameTick } from '../compositions/gameTick';
  * @exports AnimatedRenderer
  * @extends Renderer
  */
-export default class AnimatedRenderer extends Renderer {
+export class AnimatedRenderer extends Renderer {
   private active = false
 
-  constructor(options: IRendererOptions) {
+  constructor(options: Partial<IRendererOptions>) {
     super(options);
 
     window.addEventListener('resize', this.resizeHandler.bind(this));
@@ -41,7 +41,6 @@ export default class AnimatedRenderer extends Renderer {
    */
   start() {
     this.active = true;
-    window.requestAnimationFrame(this.animate.bind(this));
   }
 
   /**
@@ -52,15 +51,4 @@ export default class AnimatedRenderer extends Renderer {
     this.active = false;
   }
 
-  /**
-   * Main animation loop, updates animation store
-   * @return {null}
-   */
-  animate() {
-    if (this.active) {
-      window.requestAnimationFrame(this.animate.bind(this));
-      // AnimationStore.dispatch(tick());
-      useGameTick.getState().next()
-    }
-  }
 }

@@ -1,45 +1,58 @@
-import { Container, Spritesheet, Texture, Loader } from "pixi.js";
+import { Container, Spritesheet, Assets } from "pixi.js";
 import StaticBackground from "../displayobjects/environment/StaticBackground";
 import musicSpace4 from '../displayobjects/environment/backgroundMusic/Space-Rangers-Music-Space-4-min.mp3'
 import { sound } from '@pixi/sound';
 import atlas1 from '../displayobjects/misc/atlas1/atlas1.webp'
-import atlas1json from '../displayobjects/misc/atlas1/atlas1.json?path'
+import atlas1json from '../displayobjects/misc/atlas1/atlas1.json.data'
 import { Button } from "../displayobjects/ui/Button";
+import { SceneManager } from "../engine/SceneManager";
+import { ArcadeLevel } from "./ArcadeLevel";
+import { tuple } from "ts-practical-fp";
+import bg1 from '../displayobjects/environment/background/bg-main-menu-ai-min.webp'
+import BG from '../displayobjects/environment/background/soft.jpg';
+import LOGO from '../displayobjects/misc/Logo/logo@2x.png';
 
-export default class MainMenu extends Container {
+sound.add('space-4', musicSpace4)
 
+export class MainMenu extends Container {
+   static init = tuple(
+      () => new MainMenu(),
+      [ BG, LOGO, bg1, atlas1, musicSpace4 ]
+   )
    constructor() {
       super()
       const bg = new StaticBackground(import('../displayobjects/environment/background/bg-main-menu-ai-min.webp'))
-      bg.setTransform(180, 0, 0.5, 0.5)
+      bg.setTransform(90, 0, 0.5, 0.5)
       this.addChild(bg)
 
-      sound.add('space-4', musicSpace4)
+      sound.volumeAll = 0.5
+      sound.stopAll()
       sound.play('space-4')
 
-      Loader.shared.add(atlas1).load(() => {
-         const atlas1sheet = new Spritesheet(
-           Loader.shared.resources[atlas1]!.texture!.baseTexture,
-           atlas1json
-         );
-         atlas1sheet.parse()
+      Assets.load(atlas1json).then((atlas1sheet: Spritesheet) => {
          {
-            const x = 180 + 640
+            const x = 820
 
-            const mkBtn = () => new Button(
+            const btns = [
+               { text: 'New Game', onClick: () => { SceneManager.goto(...ArcadeLevel.init) } },
+               { text: 'Resume Game', onClick: () => { console.log('bb') }},
+               { text: 'Options', onClick: () => { console.log('cc') }},
+            ].map((b, i) => ({ y: 300 + i * 80, ...b}) )
+
+            const mkBtn = (text: string, onClick: () => void) => new Button(text, onClick,
                atlas1sheet.textures['btn_menu_idle.webp'], 
                atlas1sheet.textures['btn_menu_hover.webp'], 
                atlas1sheet.textures['btn_menu_click.webp']
             )
-            const btns = [ ...Array(3).keys() ].map((_, i) => 300 + i * 80)
-            for (const y of btns) {
-               const btn = mkBtn()
+            // const btns = buttons.map((_, i) => 300 + i * 80)
+            for (const {y, text, onClick} of btns) {
+               const btn = mkBtn(text, onClick)
                btn.x = x
                btn.y = y
                this.addChild(btn)
             }
          }
          
-       });
+      });
    }
 }
