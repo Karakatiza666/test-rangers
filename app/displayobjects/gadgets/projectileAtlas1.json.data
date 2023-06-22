@@ -1,0 +1,481 @@
+{
+   "frames": {
+     "projectile1-0.webp": {
+       "frame": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-1.webp": {
+       "frame": {
+         "x": 96,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-2.webp": {
+       "frame": {
+         "x": 192,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-3.webp": {
+       "frame": {
+         "x": 288,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-4.webp": {
+       "frame": {
+         "x": 384,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-5.webp": {
+       "frame": {
+         "x": 0,
+         "y": 96,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-6.webp": {
+       "frame": {
+         "x": 96,
+         "y": 96,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile1-7.webp": {
+       "frame": {
+         "x": 192,
+         "y": 96,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-0.webp": {
+       "frame": {
+         "x": 288,
+         "y": 96,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-1.webp": {
+       "frame": {
+         "x": 384,
+         "y": 96,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-2.webp": {
+       "frame": {
+         "x": 0,
+         "y": 192,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-3.webp": {
+       "frame": {
+         "x": 96,
+         "y": 192,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-4.webp": {
+       "frame": {
+         "x": 192,
+         "y": 192,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-5.webp": {
+       "frame": {
+         "x": 288,
+         "y": 192,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-6.webp": {
+       "frame": {
+         "x": 384,
+         "y": 192,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "projectile2-7.webp": {
+       "frame": {
+         "x": 0,
+         "y": 288,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-0.webp": {
+       "frame": {
+         "x": 96,
+         "y": 288,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-1.webp": {
+       "frame": {
+         "x": 192,
+         "y": 288,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-2.webp": {
+       "frame": {
+         "x": 288,
+         "y": 288,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-3.webp": {
+       "frame": {
+         "x": 384,
+         "y": 288,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-4.webp": {
+       "frame": {
+         "x": 0,
+         "y": 384,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-5.webp": {
+       "frame": {
+         "x": 96,
+         "y": 384,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-6.webp": {
+       "frame": {
+         "x": 192,
+         "y": 384,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-7.webp": {
+       "frame": {
+         "x": 288,
+         "y": 384,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     },
+     "impact1-8.webp": {
+       "frame": {
+         "x": 384,
+         "y": 384,
+         "w": 96,
+         "h": 96
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 96,
+         "h": 96
+       },
+       "anchor": {
+         "x": 0.5,
+         "y": 0.5
+       }
+     }
+   },
+   "animations": {
+      "projectile1": [
+         "projectile1-0.webp",  "projectile1-1.webp",
+         "projectile1-2.webp",  "projectile1-3.webp",
+         "projectile1-4.webp",  "projectile1-5.webp",
+         "projectile1-6.webp",  "projectile1-7.webp"
+      ],
+      "projectile2": [
+         "projectile2-0.webp",  "projectile2-1.webp",
+         "projectile2-2.webp",  "projectile2-3.webp",
+         "projectile2-4.webp",  "projectile2-5.webp",
+         "projectile2-6.webp",  "projectile2-7.webp"
+      ],
+      "impact1": [
+         "impact1-0.webp",  "impact1-1.webp",
+         "impact1-2.webp",  "impact1-3.webp",
+         "impact1-4.webp",  "impact1-5.webp",
+         "impact1-6.webp",  "impact1-7.webp",
+         "impact1-8.webp"
+      ]
+    },
+    "meta": {
+       "image": "projectileAtlas1.webp",
+       "format": "RGBA8888",
+       "size": {"w":480,"h":480},
+       "scale": "1"
+    }
+}

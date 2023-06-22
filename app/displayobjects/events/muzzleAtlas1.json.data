@@ -1,0 +1,410 @@
+{
+   "frames": {
+     "muzzle0-0.webp": {
+       "frame": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle0-1.webp": {
+       "frame": {
+         "x": 200,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle0-2.webp": {
+       "frame": {
+         "x": 400,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle0-3.webp": {
+       "frame": {
+         "x": 600,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle1-0.webp": {
+       "frame": {
+          "x": 0,
+          "y": 200,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle1-1.webp": {
+       "frame": {
+          "x": 200,
+         "y": 200,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle1-2.webp": {
+       "frame": {
+          "x": 400,
+         "y": 200,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle1-3.webp": {
+       "frame": {
+          "x": 600,
+         "y": 200,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle2-0.webp": {
+       "frame": {
+          "x": 0,
+          "y": 400,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle2-1.webp": {
+       "frame": {
+          "x": 200,
+          "y": 400,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle2-2.webp": {
+       "frame": {
+          "x": 400,
+         "y": 400,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle2-3.webp": {
+       "frame": {
+          "x": 600,
+         "y": 400,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle3-0.webp": {
+       "frame": {
+          "x": 0,
+          "y": 600,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle3-1.webp": {
+       "frame": {
+          "x": 200,
+          "y": 600,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle3-2.webp": {
+       "frame": {
+          "x": 400,
+          "y": 600,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle3-3.webp": {
+       "frame": {
+          "x": 600,
+         "y": 600,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle4-0.webp": {
+       "frame": {
+          "x": 0,
+          "y": 800,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle4-1.webp": {
+       "frame": {
+          "x": 200,
+          "y": 800,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle4-2.webp": {
+       "frame": {
+          "x": 400,
+          "y": 800,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     },
+     "muzzle4-3.webp": {
+       "frame": {
+          "x": 600,
+          "y": 800,
+         "w": 200,
+         "h": 200
+       },
+       "spriteSourceSize": {
+         "x": 0,
+         "y": 0,
+         "w": 200,
+         "h": 200
+       },
+       "anchor": {
+         "x":  0,
+         "y": 0.5
+       }
+     }
+   },
+   "animations": {
+      "muzzle0": [
+         "muzzle0-0.webp",
+         "muzzle0-1.webp",
+         "muzzle0-2.webp",
+         "muzzle0-3.webp"
+      ],
+      "muzzle1": [
+         "muzzle1-0.webp",
+         "muzzle1-1.webp",
+         "muzzle1-2.webp",
+         "muzzle1-3.webp"
+      ],
+      "muzzle2": [
+         "muzzle2-0.webp",
+         "muzzle2-1.webp",
+         "muzzle2-2.webp",
+         "muzzle2-3.webp"
+      ],
+      "muzzle3": [
+         "muzzle3-0.webp",
+         "muzzle3-1.webp",
+         "muzzle3-2.webp",
+         "muzzle3-3.webp",
+         "muzzle3-4.webp"
+      ],
+      "muzzle4": [
+         "muzzle4-0.webp",
+         "muzzle4-1.webp",
+         "muzzle4-2.webp",
+         "muzzle4-3.webp"
+      ],
+      "muzzle5": [
+         "muzzle0-0.webp",
+         "muzzle1-0.webp",
+         "muzzle2-0.webp",
+         "muzzle2-1.webp",
+         "muzzle3-0.webp"
+      ]
+   },
+   "meta": {
+      "image": "muzzleAtlas1.webp",
+      "format": "RGBA8888",
+      "size": {"w":800,"h":1000},
+      "scale": "2"
+   }
+}

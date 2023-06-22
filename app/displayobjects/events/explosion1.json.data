@@ -1,0 +1,147 @@
+{
+   "frames": {
+  "explosion1-0.webp": {
+    "frame": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  },
+  "explosion1-1.webp": {
+    "frame": {
+      "x": 256,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  },
+  "explosion1-2.webp": {
+    "frame": {
+      "x": 512,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  },
+  "explosion1-3.webp": {
+    "frame": {
+      "x": 768,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  },
+  "explosion1-4.webp": {
+    "frame": {
+      "x": 1024,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  },
+  "explosion1-5.webp": {
+    "frame": {
+      "x": 1280,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  },
+  "explosion1-6.webp": {
+    "frame": {
+      "x": 1536,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "spriteSourceSize": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "anchor": {
+      "x": 0.5,
+      "y": 0.5664
+    }
+  }
+},
+   "animations": {
+      "explode": [
+        "explosion1-0.webp",
+        "explosion1-1.webp",
+        "explosion1-2.webp",
+        "explosion1-3.webp",
+        "explosion1-4.webp",
+        "explosion1-5.webp",
+        "explosion1-6.webp"
+      ]
+    },
+    "meta": {
+       "image": "explosion1.webp",
+       "format": "RGBA8888",
+       "size": {"w":1792,"h":256},
+       "scale": "1"
+    }
+}

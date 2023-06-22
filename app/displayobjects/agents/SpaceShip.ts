@@ -1,16 +1,13 @@
-import { Assets, DisplayObject, IDestroyOptions, Sprite, Spritesheet, Ticker } from 'pixi.js'
-import battlestar from './battlestar/battlestar.json.data'
-import { IMovement } from '../../engine/IMovement'
+import { Assets, DisplayObject, IDestroyOptions, Resource, Sprite, Spritesheet, Texture, Ticker } from 'pixi.js'
+import { IMovementControl } from '../../engine/IMovementControl'
 import '@pixi/math-extras';
 import { Disposer } from '../../engine/Disposer';
 
 export class SpaceShip extends Sprite {
-   constructor(private movement: IMovement | IMovement & DisplayObject) {
+   constructor(sprite: Spritesheet, private movement: IMovementControl | IMovementControl & DisplayObject, private log = true) {
       super()
 
-      Assets.load(battlestar).then((battlestarSheet: Spritesheet) => {
-         this.texture = battlestarSheet.textures['battlestar-90.png']
-      })
+      this.texture = sprite.animations['idle'][0]
 
       if (movement instanceof DisplayObject) {
          this.addChild(movement)
@@ -19,9 +16,15 @@ export class SpaceShip extends Sprite {
       this.addChild(new Disposer(() => Ticker.shared.remove(this.onUpdate, this)))
    }
 
-   onUpdate(dt: number) {
-      const speed = 10 * dt
+   onUpdate(deltaFrame: number) {
+      const dt = deltaFrame / Ticker.targetFPMS;
+      const speed = 0.6 * dt
       const delta = this.movement.getVector().multiplyScalar(speed)
       this.position.add(delta, this.position)
    }
+
+   // addGadget<G extends DisplayObject>(gadget: G, controller: (g: G) => DisplayObject) {
+   //    this.addChild(gadget)
+   //    this.addChild(controller(gadget))
+   // }
 }

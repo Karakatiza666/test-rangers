@@ -2,151 +2,225 @@
    "frames": {
       "battlestar-0.png": {
         "frame": { "x": 0, "y": 0, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-10.png": {
         "frame": { "x": 120, "y": 0, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-20.png": {
         "frame": { "x": 240, "y": 0, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-30.png": {
         "frame": { "x": 360, "y": 0, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-40.png": {
         "frame": { "x": 480, "y": 0, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-50.png": {
         "frame": { "x": 600, "y": 0, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-60.png": {
         "frame": { "x": 0, "y": 75, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-70.png": {
         "frame": { "x": 120, "y": 75, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-80.png": {
         "frame": { "x": 240, "y": 75, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-90.png": {
         "frame": { "x": 360, "y": 75, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-100.png": {
         "frame": { "x": 480, "y": 75, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-110.png": {
         "frame": { "x": 600, "y": 75, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-120.png": {
         "frame": { "x": 0, "y": 150, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-130.png": {
         "frame": { "x": 120, "y": 150, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-140.png": {
         "frame": { "x": 240, "y": 150, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-150.png": {
         "frame": { "x": 360, "y": 150, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-160.png": {
         "frame": { "x": 480, "y": 150, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-170.png": {
         "frame": { "x": 600, "y": 150, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-180.png": {
         "frame": { "x": 0, "y": 225, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-190.png": {
         "frame": { "x": 120, "y": 225, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-200.png": {
         "frame": { "x": 240, "y": 225, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-210.png": {
         "frame": { "x": 360, "y": 225, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-220.png": {
         "frame": { "x": 480, "y": 225, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-230.png": {
         "frame": { "x": 600, "y": 225, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-240.png": {
         "frame": { "x": 0, "y": 300, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-250.png": {
         "frame": { "x": 120, "y": 300, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-260.png": {
         "frame": { "x": 240, "y": 300, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-270.png": {
         "frame": { "x": 360, "y": 300, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-280.png": {
         "frame": { "x": 480, "y": 300, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-290.png": {
         "frame": { "x": 600, "y": 300, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-300.png": {
         "frame": { "x": 0, "y": 375, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-310.png": {
         "frame": { "x": 120, "y": 375, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-320.png": {
         "frame": { "x": 240, "y": 375, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-330.png": {
         "frame": { "x": 360, "y": 375, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-340.png": {
         "frame": { "x": 480, "y": 375, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       },
       "battlestar-350.png": {
         "frame": { "x": 600, "y": 375, "w": 120, "h": 75 },
-        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 }
+        "spriteSourceSize": { "x": 0, "y": 0, "w": 120, "h": 75 },
+        "anchor": {"x": 0.5, "y": 0.5}
       }
    },
 	"animations": {
-		"enemy": []
+		"idle": [ "battlestar-90.png" ],
+    "rotate360": [
+      "battlestar-0.png",
+      "battlestar-10.png",
+      "battlestar-20.png",
+      "battlestar-30.png",
+      "battlestar-40.png",
+      "battlestar-50.png",
+      "battlestar-60.png",
+      "battlestar-70.png",
+      "battlestar-80.png",
+      "battlestar-90.png",
+      "battlestar-100.png",
+      "battlestar-110.png",
+      "battlestar-120.png",
+      "battlestar-130.png",
+      "battlestar-140.png",
+      "battlestar-150.png",
+      "battlestar-160.png",
+      "battlestar-170.png",
+      "battlestar-180.png",
+      "battlestar-190.png",
+      "battlestar-200.png",
+      "battlestar-210.png",
+      "battlestar-220.png",
+      "battlestar-230.png",
+      "battlestar-240.png",
+      "battlestar-250.png",
+      "battlestar-260.png",
+      "battlestar-270.png",
+      "battlestar-280.png",
+      "battlestar-290.png",
+      "battlestar-300.png",
+      "battlestar-310.png",
+      "battlestar-320.png",
+      "battlestar-330.png",
+      "battlestar-340.png",
+      "battlestar-350.png"
+    ]
 	},
    "meta": {
       "image": "battlestar-120X75.png",

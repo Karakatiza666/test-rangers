@@ -7,7 +7,6 @@ export class KeyboardGlobalListener extends EmptyObject {
       const onDown = this.onKeyDown.bind(this)
       window.addEventListener('keydown', onDown)
       this.dispose = () => {
-         console.log('dispose KeyboardGlobalListener')
          window.removeEventListener('keydown', onDown)
       }
    }

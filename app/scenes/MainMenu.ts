@@ -35,8 +35,8 @@ export class MainMenu extends Container {
 
             const btns = [
                { text: 'New Game', onClick: () => { SceneManager.goto(...ArcadeLevel.init) } },
-               { text: 'Resume Game', onClick: () => { console.log('bb') }},
-               { text: 'Options', onClick: () => { console.log('cc') }},
+               { text: 'Resume Game', onClick: () => {  }},
+               { text: 'Options', onClick: () => {  }},
             ].map((b, i) => ({ y: 300 + i * 80, ...b}) )
 
             const mkBtn = (text: string, onClick: () => void) => new Button(text, onClick,

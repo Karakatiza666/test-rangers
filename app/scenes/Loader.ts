@@ -41,7 +41,6 @@ export default class LoaderScreen extends ScaledContainer {
   }
 
   tick() {
-    console.log('loader update')
     this.ease += (this.progress - this.ease) * 0.03;
     this.bar.scale.x = this.ease;
   }
@@ -52,7 +51,6 @@ export default class LoaderScreen extends ScaledContainer {
   }
 
   onUpdate(progress: number) {
-    console.log('onUpdate', progress)
     this.progress = progress;
   }
 
