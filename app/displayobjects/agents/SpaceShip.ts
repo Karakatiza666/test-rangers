@@ -8,6 +8,7 @@ export class SpaceShip extends Sprite {
       super()
 
       this.texture = sprite.animations['idle'][0]
+      this.anchor.set(0.5, 0.5)
 
       if (movement instanceof DisplayObject) {
          this.addChild(movement)

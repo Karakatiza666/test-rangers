@@ -1,9 +1,9 @@
-import { AnimatedSprite, Container, FrameObject, ParticleContainer, Point, Resource, Texture } from "pixi.js";
+import { AnimatedSprite, Container, DisplayObject, FrameObject, ParticleContainer, Point, Resource, Sprite, Texture } from "pixi.js";
 import { Projectile } from "./projectile";
 
 export class Weapon1 extends AnimatedSprite {
    direction!: Point
-   constructor(private ether: Container, texture: Texture<Resource>[] | FrameObject[], private bulletClass: (direction: Point) => Projectile) {
+   constructor(private ether: Container<Sprite>, texture: Texture<Resource>[] | FrameObject[], private bulletClass: (direction: Point) => Projectile) {
       super(texture, true)
       this.direction = new Point(1, 0)
       this.visible = false
