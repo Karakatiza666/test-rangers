@@ -1,4 +1,4 @@
-import { Assets, Container, EventBoundary, IRenderer, ParticleContainer, Point, Rectangle, Resource, Sprite, Spritesheet, Texture, Ticker } from "pixi.js";
+import { Assets, Container, DisplayObject, EventBoundary, IRenderer, ParticleContainer, Point, Rectangle, Resource, Sprite, Spritesheet, Texture, Ticker } from "pixi.js";
 import { Viewport } from "pixi-viewport"
 import { SpaceShip } from "../displayobjects/agents/SpaceShip";
 // import battlestarImage from '../displayobjects/agents/battlestar/battlestar-120X75.png'
@@ -29,6 +29,9 @@ import { Projectile } from "../displayobjects/gadgets/projectile";
 import { HealthObject } from "../engine/HealthObject";
 import { IndexedContainer } from "../engine/IndexedContainer";
 import { ProjectileTarget } from "../engine/ProjectileTarget";
+import { SpeedComponent } from "../engine/SpeedComponent";
+import { EmptyObject } from "../engine/EmptyObject";
+import { TtlComponent } from "../engine/TtlComponent";
 
 sound.add('hymn', musicBgHymn)
 sound.add('spacelaser', spacelaser)
@@ -66,9 +69,23 @@ export class ArcadeLevel extends Container {
       const ether = new (IndexedContainer(ParticleContainer))(new Rectangle(0, 0, this.viewport.worldWidth, this.viewport.worldHeight))
       this.viewport.addChild(ether)
 
-      const player = new SpaceShip(Assets.get(battlestar), new KeyboardMovementControl())
+      const forwardSpeed = 100
+      const startOffset = new Point(0, 500)
+      const shipStartX = 300
+
       {
-         player.y = 500
+         const cameraGuide = new Container()
+         cameraGuide.addChild(new SpeedComponent(new Point(1, 0), forwardSpeed))
+         cameraGuide.position.add(startOffset, cameraGuide.position)
+         this.viewport.addChild(cameraGuide)
+         this.viewport.follow(cameraGuide /*, {radius: 100}*/)
+         this.viewport.update(0) // Needed to initialize viewport center and be able to introduce enemy right away
+      }
+
+      {
+         const player = new SpaceShip(Assets.get(battlestar), new KeyboardMovementControl())
+         // console.log('width', this.width, this.viewport.width, window.innerWidth)
+         player.position.add(startOffset, player.position).add(new Point(-window.innerWidth / 2 + shipStartX, 0), player.position)
          const weapon = new Weapon1(
             ether,
             (Assets.get(muzzleAtlas1) as Spritesheet).animations.muzzle5,
@@ -85,20 +102,43 @@ export class ArcadeLevel extends Container {
          }}))
          player.addChild(new HealthObject(200))
          player.addChild(new ProjectileTarget(player, ether, new Point(0.6, 0.6)))
+         player.addChild(new SpeedComponent(new Point(1, 0), forwardSpeed))
          this.viewport.addChild(player)
-         this.viewport.follow(player, {radius: 100})
       }
 
-      const enemy = new SpaceShip(Assets.get(battlestar), {getVector: () => new Point(0, 0)}, false)
-      enemy.scale.set(-1, 1)
-      enemy.y = 500
-      enemy.x = 400
-      enemy.addChild(new HealthObject(100))
-      enemy.addChild(new ProjectileTarget(enemy, ether, new Point(0.6, 0.6)))
-      this.viewport.addChild(enemy)
+      {
+         setInterval(() => introduceEnemy(this.viewport, () => makeEnemy(ether, forwardSpeed)), 3000)
+         
+      }
 
       const kb = new KeyboardGlobalListener()
       kb.onEscape = (() => { SceneManager.goto(MainMenu.init[0]) }).bind(this)
       this.addChild(kb)
    }
+}
+
+function makeEnemy(ether: IndexedContainer, forwardSpeed: number) {
+   const enemy = new SpaceShip(Assets.get(battlestar), {getVector: () => new Point(0, 0)}, false)
+   enemy.scale.set(-1, 1)
+   enemy.addChild(new HealthObject(100))
+   enemy.addChild(new ProjectileTarget(enemy, ether, new Point(0.6, 0.6)))
+   enemy.addChild(new SpeedComponent(new Point(1, 0), forwardSpeed))
+   return enemy
+}
+
+function introduceEnemy(viewport: Viewport, generate: () => Container) {
+   const x = screen.width / 2
+   console.log('introduceEnemy', viewport.height, screen.height)
+   const y = (Math.random() - 0.5) * screen.height * 0.8
+
+   const enemy = generate()
+   const intro1 = new SpeedComponent(new Point(-1, 0), 100)
+   intro1.addChild(new TtlComponent(2))
+   enemy.addChild(intro1)
+   const intro2 = new SpeedComponent(new Point(-1, 0), 100)
+   intro2.addChild(new TtlComponent(3))
+   enemy.addChild(intro2)
+   viewport.addChild(enemy)
+   enemy.x = viewport.center.x + x
+   enemy.y = viewport.center.y + y
 }

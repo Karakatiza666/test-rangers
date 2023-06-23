@@ -18,12 +18,12 @@ export class HealthObject extends EmptyObject {
       const baselineHealth = 100
       const scale = Math.sqrt(this.healthyPoints / baselineHealth)
       explosion.scale = new Point(scale, scale)
-      explosion.animationSpeed = 0.3
+      explosion.animationSpeed = 0.25
       explosion.position = this.parent.position
       this.parent.parent.addChild(explosion)
       explosion.play()
       sound.play('bombExplosion', {start: 0.2, end: 3, volume: 1})
-      setTimeout(() => explosion.destroy(), 333)
+      setTimeout(() => explosion.destroy(), 466.8)
       this.parent.destroy({children: true})
    }
 }

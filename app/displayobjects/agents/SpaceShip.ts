@@ -1,10 +1,10 @@
 import { Assets, DisplayObject, IDestroyOptions, Resource, Sprite, Spritesheet, Texture, Ticker } from 'pixi.js'
-import { IMovementControl } from '../../engine/IMovementControl'
+import { IDirectionControl } from '../../engine/IDirectionControl'
 import '@pixi/math-extras';
 import { Disposer } from '../../engine/Disposer';
 
 export class SpaceShip extends Sprite {
-   constructor(sprite: Spritesheet, private movement: IMovementControl | IMovementControl & DisplayObject, private log = true) {
+   constructor(sprite: Spritesheet, private movement: IDirectionControl | IDirectionControl & DisplayObject, private log = true) {
       super()
 
       this.texture = sprite.animations['idle'][0]

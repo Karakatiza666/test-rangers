@@ -1,5 +1,5 @@
 import { Point } from "pixi.js";
 
-export interface IMovementControl {
+export interface IDirectionControl {
    getVector(): Point
 }

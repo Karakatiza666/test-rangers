@@ -1,8 +1,8 @@
 import { Point } from "pixi.js"
-import { IMovementControl } from "./IMovementControl"
+import { IDirectionControl } from "./IDirectionControl"
 import { EmptyObject } from "./EmptyObject"
 
-export class KeyboardMovementControl extends EmptyObject implements IMovementControl {
+export class KeyboardMovementControl extends EmptyObject implements IDirectionControl {
    private keys: Record<string, boolean> = {}
    private keyScalar: Record<string, number> = {
       'KeyW': -1, 'KeyS': 1, 'KeyA': -1, 'KeyD': 1
