@@ -1,5 +1,6 @@
 import { sound } from "@pixi/sound";
-import { AnimatedSprite, DisplayObject, FrameObject, Point, Resource, Texture, Ticker, settings } from "pixi.js";
+import { AnimatedSprite, Container, DisplayObject, FrameObject, Point, Resource, Texture, Ticker, settings } from "pixi.js";
+import { HealthObject } from "../../engine/HealthObject";
 
 function vectorToRotation(vector: Point): number {
    // Calculate the angle using the Math.atan2 function
@@ -20,7 +21,7 @@ export class Projectile extends AnimatedSprite {
    private rotateOffset: number
    constructor(
       private direction: Point, textures: Texture<Resource>[] | FrameObject[], private owner: DisplayObject,
-      offset: {rotate: number, scale: number},
+      offset: {rotate: number, scale: number}, private damage: number,
       private initialSpeedPerSecond: number, lifetimeSeconds: number) {
       super(textures, true)
       this.age = Date.now()
@@ -42,10 +43,16 @@ export class Projectile extends AnimatedSprite {
       this.rotation = vectorToRotation(this.direction) + this.rotateOffset
       super.update(dt)
    }
-   hit(o: DisplayObject) {
+   hit(o: Container) {
       if (o === this.owner) return
       console.log('Hit!')
-      sound.play('spacelaser', {start: 0.1, end: 0.5})
+      sound.play('spacelaser', {start: 0.1, end: 0.5, volume: 2})
+      this.tryDealDamage(o)
       this.destroy()
+   }
+   private tryDealDamage(o: Container) {
+      const h = o.children.find(p => p instanceof HealthObject) as HealthObject | undefined
+      if (!h) return
+      h.damage(-this.damage)
    }
 }

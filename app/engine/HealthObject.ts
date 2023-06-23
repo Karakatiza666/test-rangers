@@ -1,18 +1,29 @@
-import { Bounds, Container, DRAW_MODES, DisplayObject, Graphics, IDestroyOptions, Rectangle, Renderer, Transform } from "pixi.js";
+import { AnimatedSprite, Assets, Bounds, Container, DRAW_MODES, DisplayObject, Graphics, IDestroyOptions, Point, Rectangle, Renderer, Spritesheet, Transform } from "pixi.js";
 import { EmptyObject } from "./EmptyObject";
+import explosion1 from '../displayobjects/events/explosion1.json.data'
+import { sound } from "@pixi/sound";
 
 export class HealthObject extends EmptyObject {
-   private graphics: Graphics
-   constructor(parent: Container) {
+   constructor(private healthPoints: number, private healthyPoints = healthPoints) {
       super()
-      this._bounds.addFrame(new Transform(), -parent.width/2, -parent.height/2, parent.width/2, parent.height/2)
-      this.graphics = new Graphics();
-
-      const b = this.getBounds()
-      this.graphics.lineStyle(4, 0x11DD11, 1);
-      this.graphics.drawRect(b.x, b.y, b.width, b.height);
-      this.graphics.position.set(0, 0)
-
-      parent.addChild(this.graphics)
+   }
+   damage(deltaHP: number) {
+      this.healthPoints += deltaHP
+      if (this.healthPoints <= 0) {
+         this.explode()
+      }
+   }
+   private explode() {
+      const explosion = new AnimatedSprite((Assets.get(explosion1) as Spritesheet).animations.explode)
+      const baselineHealth = 100
+      const scale = Math.sqrt(this.healthyPoints / baselineHealth)
+      explosion.scale = new Point(scale, scale)
+      explosion.animationSpeed = 0.3
+      explosion.position = this.parent.position
+      this.parent.parent.addChild(explosion)
+      explosion.play()
+      sound.play('bombExplosion', {start: 0.2, end: 3, volume: 1})
+      setTimeout(() => explosion.destroy(), 333)
+      this.parent.destroy({children: true})
    }
 }

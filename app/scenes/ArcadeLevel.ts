@@ -8,6 +8,7 @@ import projectileAtlas1 from '../displayobjects/gadgets/projectileAtlas1.json.da
 import projectileAtlas1Image from '../displayobjects/gadgets/projectileAtlas1.webp'
 import explosion1 from '../displayobjects/events/explosion1.json.data'
 import explosion1Image from '../displayobjects/events/explosion1.webp'
+import bombExplosion from '../displayobjects/events/a-bomb-explosion.mp3'
 import plasmablaster from '../displayobjects/events/plasmablaster.mp3'
 import spacelaser from '../displayobjects/events/space-laser.mp3'
 import zipLaser10xBurst from '../displayobjects/events/zip-laser-10x-burst.mp3'
@@ -31,6 +32,7 @@ import { ProjectileTarget } from "../engine/ProjectileTarget";
 
 sound.add('hymn', musicBgHymn)
 sound.add('spacelaser', spacelaser)
+sound.add('bombExplosion', bombExplosion)
 
 // Ticker.shared.maxFPS = 2
 
@@ -74,15 +76,15 @@ export class ArcadeLevel extends Container {
             {
                rotate: 3.14159,
                scale: 0.5
-            }, 0.9, 2)
+            }, 10, 0.9, 2)
          )
 
          player.addChild(weapon)
          player.addChild(new KeyboardControl({'Space': () => {
             weapon.shoot()
          }}))
-         player.addChild(new HealthObject(player))
-         player.addChild(new ProjectileTarget(player, ether))
+         player.addChild(new HealthObject(200))
+         player.addChild(new ProjectileTarget(player, ether, new Point(0.6, 0.6)))
          this.viewport.addChild(player)
          this.viewport.follow(player, {radius: 100})
       }
@@ -91,8 +93,8 @@ export class ArcadeLevel extends Container {
       enemy.scale.set(-1, 1)
       enemy.y = 500
       enemy.x = 400
-      enemy.addChild(new HealthObject(enemy))
-      enemy.addChild(new ProjectileTarget(enemy, ether))
+      enemy.addChild(new HealthObject(100))
+      enemy.addChild(new ProjectileTarget(enemy, ether, new Point(0.6, 0.6)))
       this.viewport.addChild(enemy)
 
       const kb = new KeyboardGlobalListener()
