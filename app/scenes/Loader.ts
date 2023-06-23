@@ -1,5 +1,4 @@
 import { Graphics, Assets, Ticker } from 'pixi.js';
-import { useGameTick } from '../compositions/gameTick';
 import { useViewportSize } from '../compositions/viewportSize';
 import ScaledContainer from '../displayobjects/system/ScaledContainer';
 
@@ -18,7 +17,6 @@ export default class LoaderScreen extends ScaledContainer {
   private unsubscribe: () => void;
 
   constructor() {
-    // const { canvasWidth, canvasHeight } = Store.getState().Renderer;
     const {canvas} = useViewportSize.getState().viewport
 
     super();
@@ -30,10 +28,6 @@ export default class LoaderScreen extends ScaledContainer {
     this.bar.scale.x = 0;
 
     // animate it
-    // this.unsubscribe = useGameTick.subscribe(s => {
-    //   this.ease += (this.progress - this.ease) * 0.03;
-    //   this.bar.scale.x = this.ease;
-    // })
     const ontick = this.tick.bind(this)
     Ticker.shared.add(ontick)
     this.unsubscribe = () => Ticker.shared.remove(ontick)

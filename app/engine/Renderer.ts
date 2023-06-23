@@ -1,9 +1,5 @@
 import { IRendererOptions, Renderer } from 'pixi.js'
-// import Store, { AnimationStore } from '../stores/Store';
-// import { tick } from '../stores/AnimationStore';
-// import { resize } from '../stores/RendererStore';
 import { useViewportSize } from '../compositions/viewportSize'
-import { useGameTick } from '../compositions/gameTick';
 
 /**
  * GL Renderer with hooks into a Store

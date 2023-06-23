@@ -44,7 +44,6 @@ export class MainMenu extends Container {
                atlas1sheet.textures['btn_menu_hover.webp'], 
                atlas1sheet.textures['btn_menu_click.webp']
             )
-            // const btns = buttons.map((_, i) => 300 + i * 80)
             for (const {y, text, onClick} of btns) {
                const btn = mkBtn(text, onClick)
                btn.x = x
