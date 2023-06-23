@@ -31,6 +31,6 @@ export class SpeedComponent extends Container {
    update(deltaFrame: number) {
       const dt = deltaFrame / Ticker.targetFPMS;
       this.parent.position.add(this.direction.multiplyScalar(this.speed * dt / 1000), this.parent.position)
-      this.parent.rotation = vectorToRotation(this.direction)
+      // this.parent.rotation = vectorToRotation(this.direction)
    }
 }

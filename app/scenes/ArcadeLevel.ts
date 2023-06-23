@@ -20,7 +20,7 @@ import imageBg1 from '../displayobjects/environment/background/bg-space-1-ai-min
 import musicBgHymn from '../displayobjects/environment/backgroundMusic/Space-Rangers-Music-Hymn-min.mp3'
 import { sound } from "@pixi/sound";
 import { KeyboardMovementControl } from "../engine/KeyboardMovementControl"
-import { KeyboardGlobalListener } from "../engine/KeyboardGlobalListener";
+import { KeyboardListener } from "../engine/KeyboardListener";
 import { SceneManager } from "../engine/SceneManager";
 import { MainMenu } from "./MainMenu";
 import { Weapon1 } from "../displayobjects/gadgets/weapon1";
@@ -30,7 +30,6 @@ import { HealthObject } from "../engine/HealthObject";
 import { IndexedContainer } from "../engine/IndexedContainer";
 import { ProjectileTarget } from "../engine/ProjectileTarget";
 import { SpeedComponent } from "../engine/SpeedComponent";
-import { EmptyObject } from "../engine/EmptyObject";
 import { TtlComponent } from "../engine/TtlComponent";
 import { constantDirection } from "../engine/IDirectionControl";
 import { AutoTrigger } from "../engine/AutoTrigger";
@@ -71,7 +70,7 @@ export class ArcadeLevel extends Container {
       const ether = new (IndexedContainer(ParticleContainer))(new Rectangle(0, 0, this.viewport.worldWidth, this.viewport.worldHeight))
       this.viewport.addChild(ether)
 
-      const forwardSpeed = 100
+      const forwardSpeed = 200
       const startOffset = new Point(0, 500)
       const shipStartX = 300
 
@@ -91,11 +90,7 @@ export class ArcadeLevel extends Container {
          const weapon = new Weapon1(
             ether,
             (Assets.get(muzzleAtlas1) as Spritesheet).animations.muzzle5,
-            d => new Projectile(d, (Assets.get(projectileAtlas1) as Spritesheet).animations.projectile1, player,
-            {
-               rotate: 3.14159,
-               scale: 0.5
-            }, 10, 0.9, 2),
+            makeBullet1(player, 3.14159, 800 + forwardSpeed, 10),
             constantDirection(1, 0)
          )
 
@@ -108,11 +103,10 @@ export class ArcadeLevel extends Container {
          player.addChild(new SpeedComponent(new Point(1, 0), forwardSpeed))
          this.viewport.addChild(player)
       }
-
       const addEnemy = () => introduceEnemy(this.viewport, () => makeEnemy(ether, forwardSpeed))
       this.addChild(new AutoTrigger(addEnemy, { periodMs: 4000 }))
 
-      const kb = new KeyboardGlobalListener()
+      const kb = new KeyboardListener()
       kb.onEscape = (() => { SceneManager.goto(MainMenu.init[0]) }).bind(this)
       this.addChild(kb)
    }
@@ -128,12 +122,8 @@ function makeEnemy(ether: IndexedContainer, forwardSpeed: number) {
    const weapon = new Weapon1(
       ether,
       (Assets.get(muzzleAtlas1) as Spritesheet).animations.muzzle5,
-      d => new Projectile(d, (Assets.get(projectileAtlas1) as Spritesheet).animations.projectile1, enemy,
-         {
-            rotate: 3.14159,
-            scale: 0.5
-         }, 10, 0.5, 2),
-         constantDirection(-1, 0)
+      makeBullet1(enemy, 0, 800 - forwardSpeed, 10),
+      constantDirection(-1, 0)
    )
    enemy.addChild(weapon)
    enemy.addChild(new AutoTrigger(() => weapon.shoot(), {periodMs: 150, burst: { periodMs: { base: 300, range: 1000 }, timeoutMs: { base: 500, range: 500 } }}))
@@ -155,4 +145,18 @@ function introduceEnemy(viewport: Viewport, generate: () => Container) {
    viewport.addChild(enemy)
    enemy.x = viewport.center.x + x
    enemy.y = viewport.center.y + y
+}
+
+function makeBullet1(owner: DisplayObject, rotation: number, speed: number, damage: 10) {
+   return (d: Point) => {
+      const p = new Projectile((Assets.get(projectileAtlas1) as Spritesheet).animations.projectile1, owner, damage)
+      p.addChild(new SpeedComponent(d, speed))
+
+      p.animationSpeed = 0.05
+      p.rotation = rotation
+      p.scale.set(0.5, 0.5)
+      p.addChild(new TtlComponent(2))
+      p.play()
+      return p
+   }
 }

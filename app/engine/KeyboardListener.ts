@@ -1,7 +1,7 @@
 
 import { EmptyObject } from "./EmptyObject"
 
-export class KeyboardGlobalListener extends EmptyObject {
+export class KeyboardListener extends EmptyObject {
    constructor() {
       super()
       const onDown = this.onKeyDown.bind(this)

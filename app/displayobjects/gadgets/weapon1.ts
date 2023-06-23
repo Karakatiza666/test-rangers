@@ -6,7 +6,7 @@ export class Weapon1 extends AnimatedSprite {
    constructor(
       private ether: Container<Sprite>,
       texture: Texture<Resource>[] | FrameObject[],
-      private bulletClass: (direction: Point) => Projectile,
+      private makeBullet: (direction: Point) => Sprite,
       private aim: IDirectionControl) {
       super(texture, true)
       this.visible = false
@@ -15,8 +15,7 @@ export class Weapon1 extends AnimatedSprite {
       this.visible = true
       this.play()
       setTimeout(() => { this.stop(); this.visible = false }, 35)
-      const p = this.ether.addChild(this.bulletClass(this.aim.getVector()))
+      const p = this.ether.addChild(this.makeBullet(this.aim.getVector()))
       p.position = this.parent.position
-      p.play()
    }
 }
