@@ -32,6 +32,8 @@ import { ProjectileTarget } from "../engine/ProjectileTarget";
 import { SpeedComponent } from "../engine/SpeedComponent";
 import { EmptyObject } from "../engine/EmptyObject";
 import { TtlComponent } from "../engine/TtlComponent";
+import { constantDirection } from "../engine/IDirectionControl";
+import { AutoTrigger } from "../engine/AutoTrigger";
 
 sound.add('hymn', musicBgHymn)
 sound.add('spacelaser', spacelaser)
@@ -93,7 +95,8 @@ export class ArcadeLevel extends Container {
             {
                rotate: 3.14159,
                scale: 0.5
-            }, 10, 0.9, 2)
+            }, 10, 0.9, 2),
+            constantDirection(1, 0)
          )
 
          player.addChild(weapon)
@@ -106,10 +109,8 @@ export class ArcadeLevel extends Container {
          this.viewport.addChild(player)
       }
 
-      {
-         setInterval(() => introduceEnemy(this.viewport, () => makeEnemy(ether, forwardSpeed)), 3000)
-         
-      }
+      const addEnemy = () => introduceEnemy(this.viewport, () => makeEnemy(ether, forwardSpeed))
+      this.addChild(new AutoTrigger(addEnemy, { periodMs: 4000 }))
 
       const kb = new KeyboardGlobalListener()
       kb.onEscape = (() => { SceneManager.goto(MainMenu.init[0]) }).bind(this)
@@ -118,17 +119,30 @@ export class ArcadeLevel extends Container {
 }
 
 function makeEnemy(ether: IndexedContainer, forwardSpeed: number) {
-   const enemy = new SpaceShip(Assets.get(battlestar), {getVector: () => new Point(0, 0)}, false)
+   const enemy = new SpaceShip(Assets.get(battlestar), constantDirection(0, 0), false)
    enemy.scale.set(-1, 1)
    enemy.addChild(new HealthObject(100))
    enemy.addChild(new ProjectileTarget(enemy, ether, new Point(0.6, 0.6)))
    enemy.addChild(new SpeedComponent(new Point(1, 0), forwardSpeed))
+
+   const weapon = new Weapon1(
+      ether,
+      (Assets.get(muzzleAtlas1) as Spritesheet).animations.muzzle5,
+      d => new Projectile(d, (Assets.get(projectileAtlas1) as Spritesheet).animations.projectile1, enemy,
+         {
+            rotate: 3.14159,
+            scale: 0.5
+         }, 10, 0.5, 2),
+         constantDirection(-1, 0)
+   )
+   enemy.addChild(weapon)
+   enemy.addChild(new AutoTrigger(() => weapon.shoot(), {periodMs: 150, burst: { periodMs: { base: 300, range: 1000 }, timeoutMs: { base: 500, range: 500 } }}))
+
    return enemy
 }
 
 function introduceEnemy(viewport: Viewport, generate: () => Container) {
    const x = screen.width / 2
-   console.log('introduceEnemy', viewport.height, screen.height)
    const y = (Math.random() - 0.5) * screen.height * 0.8
 
    const enemy = generate()

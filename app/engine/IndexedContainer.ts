@@ -43,7 +43,7 @@ export function IndexedContainer<T extends DisplayObject>(container: typeof Cont
       }
    
       queryBounds(o: Box) {
-         return this.quadtree.query(o).map(p => p.data as DisplayObject)
+         return this.quadtree.query(o).map(p => p.data as DisplayObject).filter(o => !o.destroyed)
       }
    
       destroy(options?: boolean | IDestroyOptions | undefined): void {

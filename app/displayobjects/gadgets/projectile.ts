@@ -46,6 +46,9 @@ export class Projectile extends AnimatedSprite {
    hit(o: Container) {
       if (o === this.owner) return
       console.log('Hit!')
+      if (o.destroyed) {
+         console.log('Hit destroyed object!!')
+      }
       sound.play('spacelaser', {start: 0.1, end: 0.5, volume: 2})
       this.tryDealDamage(o)
       this.destroy()

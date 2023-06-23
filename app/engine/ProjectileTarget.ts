@@ -29,6 +29,7 @@ export class ProjectileTarget extends EmptyObject {
       const projectiles = this.ether.queryBounds(getComponentBox(this))
       projectiles.forEach(p => {
          if (!(p instanceof Projectile)) return
+         if (!this.parent) return // Parent is being destroyed
          p.hit(this.parent)
       })
    }
